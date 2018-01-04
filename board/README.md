@@ -35,6 +35,37 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ```
 
 
+## Meterial 설치 방법
+> 설치 가이드
+> 1) 라이브러리 설치
+> \- **npm install --save @angular/material @angular/cdk**
+> \- **npm install --save @angular/animations** (애니메이션 효과)
+> \- **npm install --save @angular/hammerjs** (mat-slide-toggle, mat-slider, matTooltip  (의존성) 
+
+> 2) App.module 추가
+> \- import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+> \- import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+> \- @NgModule({
+	  imports: [BrowserAnimationsModule, MatButtonModule, MatCheckboxModule]
+	});
+
+> 3) 테마 설치 (styles.css)
+> \- @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+> 4) hammerjs 추가(src/main.ts)
+> \- import 'hammerjs';
+
+> 5) Meterial Icons (index.html)
+> \- &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+> \- https://google.github.io/material-design-icons/
+
+
+```
+참고
+ - 홈페이지 : https://material.angular.io/guide/getting-started
+```
+---
+
 ## Bootsrap(4.x.x) 설치 방법
 ***(부트스트랩이 별기능이 없어서 취소함.)***
 **Requires: Angular5 이상**

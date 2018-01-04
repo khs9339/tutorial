@@ -1,4 +1,8 @@
 #Angular5 게시판만들어 보자!!
+> **app.module Default Import**
+> import { BrowserModule } from '@angular/platform-browser';
+> import { NgModule } from '@angular/core';
+> import { FormsModule } from '@angular/forms';
 ---
 # 게시판 프로젝트
 ```bash 
@@ -28,7 +32,7 @@
  - <input [(ngModel)]="hero.name" placeholder="name">
  - app.module.ts
  > import { FormsModule } from '@angular/forms';
- > import { FormsModule }
+
 ```
 
 ## 3. Service Add
@@ -47,7 +51,18 @@
 
 
 
+
+
 ```bash
 참조 
  - https://jaxenter.com/road-to-angular-5-133253.html
 ```
+
+
+# 4. IMPORT 소개
+
+| 문법 | 기능 | 비고 |
+| - | - | - |
+|import { FormsModule } from '@angular/forms'; | input의 모델 바인딩 | |
+
+
