@@ -33,3 +33,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - FrameWork : Angular5
 - CssFrameWorck : Bootsrap
 ```
+
+
+## Bootsrap(4.x.x) 설치 방법
+** Requires: Angular5 이상 **
+> App.module.ts
+> - import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+> - imports: [NgbModule, ...]
+```
+참고
+ - https://ng-bootstrap.github.io/#/getting-started
+```
+
+
+
