@@ -3,11 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 /* ************************ **
+* Module
+** ************************ */
+import { AppRouterModule } from './router/app-router.module';
+
+
+/* ************************ **
 * Library Add
 ** ************************ */
 // 메터리얼 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+
+/* ************************ **
+* Layout Component
+** ************************ */
+
 
 /* ************************ **
 * Service Component
@@ -24,6 +35,8 @@ import { WriteComponent } from './write/write.component';
     WriteComponent
   ],
   imports: [
+    AppRouterModule,
+
     BrowserModule, 
     FormsModule,
     BrowserAnimationsModule, 
