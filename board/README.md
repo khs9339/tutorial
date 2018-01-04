@@ -40,7 +40,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 > 1) 라이브러리 설치
 > \- **npm install --save @angular/material @angular/cdk**
 > \- **npm install --save @angular/animations** (애니메이션 효과)
-> \- **npm install --save @angular/hammerjs** (mat-slide-toggle, mat-slider, matTooltip  (의존성) 
+> \- **npm install --save hammerjs** (mat-slide-toggle, mat-slider, matTooltip  (의존성) 
 
 > 2) App.module 추가
 > \- import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -57,8 +57,42 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 > 5) Meterial Icons (index.html)
 > \- &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
-> \- https://google.github.io/material-design-icons/
+> \- [아이콘 가이드](https://google.github.io/material-design-icons/)
 
+### Meterial 모듈 소개
+| 모듈 | 기능 |
+| - | - |
+| MatAutocompleteModule | |
+| MatButtonModule | |
+| MatButtonToggleModule | |
+| MatCardModule | |
+| MatCheckboxModule | |
+| MatChipsModule | |
+| MatDatepickerModule | |
+| MatDialogModule | |
+| MatExpansionModule | |
+| MatGridListModule | |
+| MatIconModule | |
+| MatInputModule | |
+| MatListModule | |
+| MatMenuModule | |
+| MatNativeDateModule | |
+| MatPaginatorModule | |
+| MatProgressBarModule | |
+| MatProgressSpinnerModule | |
+| MatRadioModule | |
+| MatRippleModule | |
+| MatSelectModule | |
+| MatSidenavModule | |
+| MatSliderModule | |
+| MatSlideToggleModule | |
+| MatSnackBarModule | |
+| MatSortModule | |
+| MatTableModule | |
+| MatTabsModule | |
+| MatToolbarModule | |
+| MatTooltipModule | |
+| MatStepperModule | |
 
 ```
 참고

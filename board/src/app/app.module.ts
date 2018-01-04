@@ -5,8 +5,9 @@ import { FormsModule } from '@angular/forms';
 /* ************************ **
 * Library Add
 ** ************************ */
-// 부트스트랩 
-
+// 메터리얼 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 
 /* ************************ **
 * Service Component
@@ -24,7 +25,10 @@ import { WriteComponent } from './write/write.component';
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, 
+    MatButtonModule, 
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
