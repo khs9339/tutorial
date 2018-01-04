@@ -36,7 +36,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Bootsrap(4.x.x) 설치 방법
-** Requires: Angular5 이상 **
+***(부트스트랩이 별기능이 없어서 취소함.)***
+**Requires: Angular5 이상**
+
 > App.module.ts
 > - import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 > - imports: [NgbModule, ...]
