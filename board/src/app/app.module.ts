@@ -18,6 +18,8 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 /* ************************ **
 * Layout Component
 ** ************************ */
+import { TopComponent } from './layout/top/top.component';
+import { FootComponent } from './layout/foot/foot.component';
 
 
 /* ************************ **
@@ -28,11 +30,14 @@ import { ListComponent } from './list/list.component';
 import { WriteComponent } from './write/write.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    WriteComponent
+    WriteComponent,
+    TopComponent,
+    FootComponent
   ],
   imports: [
     AppRouterModule,
