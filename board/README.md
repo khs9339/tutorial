@@ -74,7 +74,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 | MatGridListModule | |
 | MatIconModule | |
 | MatInputModule | |
-| MatListModule | |
+| MatListModule | rowHeight: fit / 100px / 2:1 |
+| | gutterSize: px |
 | MatMenuModule | |
 | MatNativeDateModule | |
 | MatPaginatorModule | |
