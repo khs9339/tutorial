@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 /* ************************ **
 * Module
 ** ************************ */
@@ -11,6 +12,9 @@ import { AppRouterModule } from './router/app-router.module';
 /* ************************ **
 * Library Add
 ** ************************ */
+
+import { CdkTableModule } from '@angular/cdk/table';
+
 // 메터리얼 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { 
@@ -65,6 +69,7 @@ import { WriteComponent } from './write/write.component';
 
 @NgModule({
   exports: [
+    CdkTableModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -115,10 +120,12 @@ export class MaterialModule { }
     FormsModule,
     BrowserAnimationsModule, 
     MaterialModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
+    // HttpModule
   ],
 
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
