@@ -104,7 +104,13 @@ export class AppRoutingModule { }
 | - | - | - |
 |import { FormsModule } from '@angular/forms'; | input의 모델 바인딩 | |
 
-
+# 5. Http Module 추가
+> app.module
+> <pre>
+> import { HttpClientModule, HttpClient } from '@angular/common/http';
+>   imports: [HttpClientModule]
+>   providers: [HttpClient],
+> </pre>
 ---
 > **참고자료**
 > [Angular5 API](https://angular.io/api)
