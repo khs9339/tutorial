@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { } from ''
+import { AngularService } from '../service/angular.service';
+
 @Component({
   selector: 'app-write',
   templateUrl: './write.component.html',
@@ -9,19 +10,30 @@ import { } from ''
 
 
 export class WriteComponent implements OnInit {
+  isSpinner= false;
   frm = {
     title: '',
     body: ''
   };
 
-  constructor() { }
+  constructor(
+    private angularService: AngularService
+  ) { }
 
   ngOnInit() {
   }
 
 
 
-  submit() {
-    console.log("sub", this.frm)
+  submit(): void {
+    this.isSpinner = true;
+    this.angularService.save(this.frm)
+          .subscribe(res => {
+            this.isSpinner = false;
+          },
+          err => {
+            console.log("Error occured");
+          }
+        );
   }
 }

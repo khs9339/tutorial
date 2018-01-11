@@ -10,6 +10,8 @@ import { catchError } from 'rxjs/operators/catchError';
 import { map } from 'rxjs/operators/map';
 import { log } from 'util';
 
+import { AngularService } from '../service/angular.service';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -19,7 +21,7 @@ import { log } from 'util';
 // log("APP - LIST");
 export class ListComponent implements AfterViewInit {
   displayedColumns = ['number', 'created', 'state', 'title'];
-  dataBase: HttpDao | null;
+  dataBase: AngularService | null;
   dataSource = new MatTableDataSource();
 
   resultsLength = 0;
@@ -29,7 +31,7 @@ export class ListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     console.log("ListComponent");
   }
 
@@ -38,7 +40,7 @@ export class ListComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit');
-    this.dataBase = new HttpDao(this.http);
+    this.dataBase = new AngularService(this.http);
 
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
@@ -47,9 +49,9 @@ export class ListComponent implements AfterViewInit {
       .pipe(
       startWith({}),
       switchMap(() => {
-        console.log('switchMap');
+        console.log('switchMap', this.dataBase);
         this.isLoadingResults = true;
-        return this.dataBase!.getRepoIssues(
+        return this.dataBase!.lists(
           this.sort.active, this.sort.direction, this.paginator.pageIndex);
       }),
       map(data => {
@@ -69,28 +71,5 @@ export class ListComponent implements AfterViewInit {
       ).subscribe(data => this.dataSource.data = data);
 
 
-  }
-}
-
-export interface GithubApi{
-  items: GithubIssue[];
-  total_count: number;
-}
-
-export interface GithubIssue{
-  created_at: string;
-  number; string;
-  title: string;
-  state: string;
-}
-export class HttpDao {
-  constructor(private http: HttpClient){
-    console.log("HTTPDAO");
-  }
-  getRepoIssues(sort: string, order: string, page: number): Observable<GithubApi> {
-    const href = 'https://api.github.com/search/issues';
-    const requestUrl = `${href}?q=repo:angular/material2&sort=${sort}&order=${order}&page=${page + 1}`;
-    // const requestUrl = 'https://jsonplaceholder.typicode.com/comments';
-    return this.http.get<GithubApi>(requestUrl);
   }
 }

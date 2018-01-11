@@ -65,6 +65,8 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { WriteComponent } from './write/write.component';
 
+import { AngularService } from './service/angular.service';
+
 
 
 @NgModule({
@@ -125,7 +127,7 @@ export class MaterialModule { }
     // HttpModule
   ],
 
-  providers: [HttpClient],
+  providers: [HttpClient, AngularService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
