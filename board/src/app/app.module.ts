@@ -64,8 +64,10 @@ import { FootComponent } from './layout/foot/foot.component';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { WriteComponent } from './write/write.component';
+import { DetailComponent } from './detail/detail.component';
 
 import { AngularService } from './service/angular.service';
+
 
 
 
@@ -112,6 +114,7 @@ export class MaterialModule { }
     AppComponent,
     ListComponent,
     WriteComponent,
+    DetailComponent,
     TopComponent,
     FootComponent
   ],
@@ -126,7 +129,6 @@ export class MaterialModule { }
     HttpClientModule
     // HttpModule
   ],
-
   providers: [HttpClient, AngularService],
   bootstrap: [AppComponent]
 })
