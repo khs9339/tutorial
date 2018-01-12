@@ -1,3 +1,24 @@
-<p>
-  write works!
-</p>
+<mat-card>
+  <div class="loading-shade" *ngIf="isSpinner">
+    <mat-spinner></mat-spinner>
+  </div>
+  
+  <mat-card-title>새로 등록하기. {{isRateLimitReached}}</mat-card-title>
+  <mat-card-content>
+
+
+    <mat-form-field hintLabel="최대 30자 까지 입력 가능합니다." >
+      <input matInput #input maxlength="30" [(ngModel)]="frm.title" placeholder="제목을 입력하세요.">
+      <mat-hint align="end" > {{input.value?.length || 0}}/30 </mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field hintLabel="최대 100자 까지 입력 가능합니다." >
+      <textarea matInput #input maxlength="100" [(ngModel)]="frm.body" placeholder="내용을 입력하세요."></textarea>
+      <mat-hint align="end"> {{input.value?.length || 0 }} / 100 </mat-hint>
+    </mat-form-field>
+
+    <div style="text-align: center; padding: 20px">
+      <button mat-raised-button color="accent" type="button" (click)="submit()" > 등록하기 </button>
+    </div>
+  </mat-card-content>
+</mat-card>
